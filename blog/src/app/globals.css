@@ -1,33 +1,89 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 5px;
+  height: 150px;
+  text-align: right;
+  padding: 10px;
+  border: solid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: none;
+  left: -1px;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
+  align-content: center;
+}
+
+li {
+  padding: 5px;
+}
+
+form {
+  text-align: center;
+  padding: 10px;
+  margin: 100px;
+}
+
+.content {
+  align-self: center;
+}
+
+.tagline {
+  text-align: center;
+  margin-top: 200px;
+}
+
+.footer {
+  display: inline;
+  position: absolute;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  bottom: 0px;
+}
+
+button {
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.posthead {
+  text-align: center;
+}
+
+.commentIcon {
+  height: 20px;
+  width: 35px;
+}
+
+.binIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.binbutton {
+  background: none;
+  border: none;
+}
+
+.sorting {
+  max-width: fit-content;
+}
+
+.soloposttitle {
+  text-align: center;
+}
+
+.content {
+  text-align: center;
 }
