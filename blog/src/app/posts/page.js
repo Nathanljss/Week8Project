@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import commentIcon from "@/../public/speech-bubble.png";
 import binIcon from "@/../public/recycle-bin.png";
-import Header from "../components/header";
 
 export default async function PostsPage({ searchParams }) {
   console.log("searchParams", searchParams);
@@ -25,25 +24,27 @@ export default async function PostsPage({ searchParams }) {
       <Link className="sorting" href="./posts?sort=desc">
         Oldest first
       </Link>
-      {posts.map(function (posts) {
-        return (
-          <ul key={posts.id}>
-            <li>
-              {posts.title} says: {posts.content} &nbsp;&nbsp;&nbsp;
-              <Link href="posts/id">
+      <div>
+        <ul>
+          {posts.map((post) => (
+            <li key={post.id}>
+              {" "}
+              {post.title} says: {post.content}
+              &nbsp;&nbsp;&nbsp;
+              <a href={`/posts/${post.id}`}>
                 <Image
                   className="commentIcon"
                   alt="Comments"
                   src={commentIcon}
                 />
-              </Link>
+              </a>
               <button className="binbutton">
                 <Image className="binIcon" alt="Delete" src={binIcon} />
               </button>
             </li>
-          </ul>
-        );
-      })}
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

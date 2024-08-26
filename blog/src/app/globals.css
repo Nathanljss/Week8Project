@@ -82,8 +82,13 @@ button {
 
 .soloposttitle {
   text-align: center;
+  align-self: center;
 }
 
 .content {
+  text-align: center;
+}
+
+.soloposts {
   text-align: center;
 }
